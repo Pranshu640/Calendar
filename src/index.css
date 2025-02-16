@@ -1,0 +1,16 @@
+:root {
+    --neon: #ffa500;
+    --neon-gold: #ffd700;
+    --neon-glow: rgba(255, 165, 0, 0.3);
+    --neon-shadow: rgba(255, 215, 0, 0.1);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+}
+
+* {
+    box-sizing: border-box;
+}

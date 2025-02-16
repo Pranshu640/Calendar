@@ -1,0 +1,49 @@
+.DateCell {
+    border: 1px solid #333;
+    aspect-ratio: 1/1;
+    padding: 0;
+    background-color: #242424;
+    min-height: 80px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.DateCell > p {
+    margin: 0;
+    padding: 8px;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+}
+
+.DateCell:hover {
+    background-color: #2a2a2a;
+    transform: scale(1.02);
+    z-index: 1;
+    box-shadow: 0 0 15px var(--neon-shadow);
+    border-color: var(--neon-gold);
+}
+
+.DateCell.today {
+    background-color: var(--neon-shadow);
+    border: 1px solid var(--neon-gold);
+}
+
+.DateCell.today > p {
+    color: var(--neon);
+    font-weight: bold;
+}
+
+.DateCell:empty {
+    background-color: #1a1a1a;
+}
+
+@media (max-width: 768px) {
+    .DateCell {
+        min-height: 60px;
+    }
+    
+    .DateCell > p {
+        padding: 5px;
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,51 @@
+.calendar-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #242424;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px var(--neon-shadow);
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.CalenderSet {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: #242424;
+    border: 1px solid #333;
+}
+
+.weekday-header {
+    background-color: #1a1a1a;
+    color: var(--neon-gold);
+    padding: 15px 10px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #333;
+}
+
+.current-month {
+    background: linear-gradient(45deg, #1a1a1a, #242424);
+    color: var(--neon);
+    padding: 20px;
+    text-align: center;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--neon-glow);
+    border-bottom: 1px solid #333;
+    position: relative;
+    overflow: hidden;
+}
+
+.current-month::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+    pointer-events: none;
+}
