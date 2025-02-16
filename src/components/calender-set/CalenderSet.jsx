@@ -1,13 +1,15 @@
 import DateCell from "../date-set/DateCell"
 import './CalenderSet.css'
-import DateSet from "../../helpers/months/month"
+import { getWeekDates, getMonthDates } from "../../helpers/months/month"
 
-export default function CalenderSet({month, year}){
+export default function CalenderSet({month, year, view = 'month', date}){
     const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const dates = DateSet(month, year);
+    const dates = view === 'month' ? 
+        getMonthDates(month, year) : 
+        getWeekDates(month, year, date);
 
     return(
-        <div className="calendar-container">
+        <div className={`calendar-container ${view}-view`}>
             <div className="current-month">
                 {month} {year}
             </div>
@@ -21,6 +23,7 @@ export default function CalenderSet({month, year}){
                     <DateCell 
                         key={index} 
                         date={el}
+                        view={view}
                         isToday={
                             el === new Date().getDate() && 
                             month === new Date().toLocaleString('default', { month: 'long' }) &&

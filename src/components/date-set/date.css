@@ -1,11 +1,19 @@
 .DateCell {
     border: 1px solid #333;
-    aspect-ratio: 1/1;
     padding: 0;
     background-color: #242424;
-    min-height: 80px;
     transition: all 0.3s ease;
     position: relative;
+}
+
+.month-view .DateCell {
+    aspect-ratio: 1/1;
+    min-height: 80px;
+}
+
+.week-view .DateCell {
+    min-height: 200px;
+    padding-bottom: 20px;
 }
 
 .DateCell > p {
@@ -13,6 +21,19 @@
     padding: 8px;
     font-size: 0.9rem;
     color: #e0e0e0;
+}
+
+.week-view .DateCell > p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+.week-view .DateCell > p .other-month {
+    color: #666;
+    font-size: 0.8rem;
 }
 
 .DateCell:hover {
